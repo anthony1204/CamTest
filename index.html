@@ -3,12 +3,14 @@
   width: 100%;
   height: auto;
   background-color: #00FFFF;
+  pointer-events: none;
   }
 </style>
-<video autoplay playsinline controls=false id="vid">
+<video autoplay playsinline id="vid">
   </video>
 <script>
   var video = document.getElementById("vid");
+  video.controls = false;
   if (navigator.mediaDevices.getUserMedia) {
   navigator.mediaDevices.getUserMedia({ video: true })
     .then(function (stream) {
